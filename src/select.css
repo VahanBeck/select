@@ -1,0 +1,79 @@
+.select-container {
+    position: relative;
+    width: 400px;
+}
+
+.select-wrapper {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    min-height: 50px;
+    border: 1px solid;
+    text-align: left;
+    padding: 8px 30px 8px 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.select-content-ul {
+    position: absolute;
+    bottom: 0;
+    overflow: auto;
+    left: 0;
+    max-height: 300px;
+    text-align: left;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.select-item {
+    cursor: pointer;
+    color: black;
+}
+
+.select-item.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.3
+}
+
+.selected-item {
+    cursor: pointer;
+    padding: 8px;
+    margin: 6px;
+    position: relative;
+}
+
+.remove-selected-item {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: red;
+}
+
+.search-field-container {
+    list-style-type: none;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: white;
+}
+
+.select-wrapper:after {
+    content: "^";
+    position: absolute;
+    right: 15px;
+    transform: rotate(180deg);
+    transition: all .3s linear;
+    font-size: 21px;
+}
+
+.select-wrapper.opened:after {
+    transform: rotate(0deg);
+}
